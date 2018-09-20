@@ -1,5 +1,4 @@
 # 1, 1, 2, 3, 5, 8 . . .
-
 def fibonacci(n):
     if n < 1:
         return 'invalid'
