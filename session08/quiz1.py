@@ -37,11 +37,11 @@ def detect(a, b, n):
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-# print(detect(2018, 9, 2018))
-# print(detect(2017, 1, 2018))
-# print(detect(1009, 2, 2018))
-# print(detect(2020, 2, 2018))
-# print(detect(2017, 3, 2018))
+print(detect(2018, 9, 2018))
+print(detect(2017, 1, 2018))
+print(detect(1009, 2, 2018))
+print(detect(2020, 2, 2018))
+print(detect(2017, 3, 2018))
 
 """
 -----------------------------------------------------------------------
@@ -61,5 +61,5 @@ def sum_cubes_of_odd_numbers(n):
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-# print(sum_cubes_of_odd_numbers(1))
-# print(sum_cubes_of_odd_numbers(10))
+print(sum_cubes_of_odd_numbers(1))
+print(sum_cubes_of_odd_numbers(10))
