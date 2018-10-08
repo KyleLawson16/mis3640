@@ -43,7 +43,7 @@ def middle(t):
     >>> middle(t)
     [2, 3]
     """
-    return t[1:len(t)-1]
+    return t[1:-1]
 
 
 def chop(t):
@@ -56,8 +56,8 @@ def chop(t):
     >>> t
     [2, 3]
     """
-    t.pop(0)
-    t.pop(len(t) - 1)
+    del t[0]
+    del t[-1]
 
 
 def is_sorted(t):
@@ -88,13 +88,7 @@ def is_anagram(word1, word2):
     >>> is_anagram([1, 2, 2], [2, 1, 2])
     Ture
     """
-    if len(word1) != len(word2):
-        return False
-    for i in word1:
-        if word1.count(i) != word2.count(i):
-            return False
-
-    return True
+    return sorted(word1) == sorted(word2)
 
 
 def has_duplicates(s):
