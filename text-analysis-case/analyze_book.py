@@ -48,12 +48,21 @@ def different_words(hist):
     return len(hist)
 
 
-def most_common(hist):
+def most_common(hist, excluding_stopwords=True):
     """Makes a list of word-freq pairs in descending order of frequency.
     hist: map from word to frequency
     returns: list of (frequency, word) pairs
     """
-    return sorted([word for word in hist.items()], key=lambda x: x[1], reverse=True)
+    if excluding_stopwords:
+        fp = open('stop_words.txt')
+        stop_words = []
+        for word in fp:
+            if word:
+                word = word[:-1]
+                stop_words.append(word)
+        return sorted([word for word in hist.items() if word not in stop_words], key=lambda x: x[1], reverse=True)
+    else:
+        return sorted([word for word in hist.items()], key=lambda x: x[1], reverse=True)
 
 
 def print_most_common(hist, num=10):
@@ -61,7 +70,7 @@ def print_most_common(hist, num=10):
     hist: histogram (map from word to frequency)
     num: number of words to print
     """
-    sorted_words = sorted([word for word in hist.items()], key=lambda x: x[1], reverse=True)
+    sorted_words = most_common(hist)
     print(f'The {num} most common words are:')
     for freq, word in sorted_words[0:num]:
         print(word, '\t', freq)
