@@ -29,7 +29,7 @@ class Candidate:
         return f'{self.name} wins {states_string}'
 
     def __gt__(self, other):
-        return self.votes > other.votes:
+        return self.votes > other.votes
 
     def win_state(self, state):
         """Adds a tate to winning_states and updates votes.
